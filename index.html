@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>あなたはナニ顔？ どうぶつ顔診断</title>
+    <meta name="title" content="あなたはナニ顔？ どうぶつ顔診断">
+    <meta name="subject" content="あなたは何顔？動物顔診断！顔特徴から性格や恋愛傾向がわかる！">
+    <meta name="keywords" content="動物顔、動物顔診断、どうぶつ、顔診断、どうぶつ顔診断、AI動物顔診断、AIどうぶつ診断、AI動物顔診断">
+    <meta name="author" content="顔診断">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://gaosindan.tk" />
+    <meta property="og:url" content="https://gaosindan.tk" />
+    <meta property="og:type" content="website" /> 
+   <meta property="og:title" content="どうぶつ顔診断" />
+    <meta property="og:description" content="あなたは何顔？動物顔診断！顔特徴から性格や恋愛傾向がわかる！"
+    />
+    <meta property="og:image" content="https://imgur.com/xcHTgWC" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"></script>
+    <!-- <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fdd8a821e6468ab"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav class="p-3 container navbar navbar-expand-lg navbar-light">
+        <!-- <a class="navbar-brand" href="https://animalface.site/">どうぶつ顔診断</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">どうぶつ顔診断
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section">
+        <h1 class="title">あなたはナニ顔？ どうぶつ顔診断</h1>
+        <h2 class="subtitle">【AI診断】あなたの顔をAI診断！</h2>
+        <h2 class="sr-only">私はどんな動物に似てるのかな？
+動物似顔検索をお試しください！</h2>
+        <h3 class="sr-only">あなたは何顔？動物顔診断！顔特徴から性格や恋愛傾向がわかる！</h3>
+        <h4 class="sr-only">本サービスは、Googleの人工知能teachable machine2.0を利用しました。</h4>
+        <p class="sr-only">あなたは何顔？動物顔診断！顔特徴から性格や恋愛傾向がわかる！</p>
+    </section>
+    <h3 class="pb-2 d-flex justify-content-center">あなたの性別は？</h3>
+    <section class="d-flex justify-content-center">
+        <p class="d-flex align-items-center pr-3">女子</p>
+        <div>
+            <input type="checkbox" id="gender">
+            <label for="gender">
+                <span class="knob">
+                    <i></i>
+                </span>
+            </label>
+        </div>
+        <p class="d-flex align-items-center pl-3">男子</p>
+    </section>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="mt-3 container file-upload">
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="https://animalface.site/img/upload.svg" class="mt-5 pt-5 upload">
+                <h3 class="mb-5 pb-5 pt-4  upload-text">写真をアップロードしてください。</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">AIがあなたの顔を分析している中です。。。。</p>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+            
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+            
+            <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" onclick="window.location.reload();">
+                    <span class="try-again-text">他の写真でもう一度試し〜</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer pt-5 container d-flex justify-content-center">
+        <div>
+    </div>
+    </footer>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.image-upload-wrap').hide();
+                    $('#loading').show();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(function() {
+                    console.log("hello");
+                    predict();
+                    $('#loading').hide();
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        let URL;
+        const urlMale = "https://teachablemachine.withgoogle.com/models/o9D1N5TN/";
+        const urlFemale = "https://teachablemachine.withgoogle.com/models/bB3YHn5r/";
+        let model, webcam, labelContainer, maxPredictions;
+        async function init() {
+            if (document.getElementById("gender").checked) {
+                URL = urlMale;
+            } else {
+                URL = urlFemale;
+            }
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
+            }
+        }
+        async function predict() {
+            var image = document.getElementById("face-image")
+            const prediction = await model.predict(image, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            var resultTitle, resultExplain, resultCeleb;
+            if (document.getElementById("gender").checked) {
+                switch (prediction[0].className) {
+                    case "dog":
+                        resultTitle = "犬顔男子"
+                        resultExplain = "性格は外向的でどんな相手ともよくやっていくタイプ。計画的に仕事を進め、高い目標を立て 集中をして、結果を生み出す力を持っています。困難な状況だとしても、方法を見つけて解決 することができます。責任感が強く、すべての仕事に興味を持ち、色々な場面で頭角を 表すことができます。他の人のために配慮し、仕事を進めていくので、バランスの取れた良い結論を出すことができると思われます。"
+                        resultCeleb = "犬顔の男性芸能人: 山﨑賢人、小池徹平、千葉雄大、竹内涼真、志尊淳"
+                        break;
+                    case "cat":
+                        resultTitle = "ネコ顔男子"
+                        resultExplain = "過去の経験を重視し、現実的な思考をするタイプで、分析が上手で、精密な計算や論理的に仕事を解決していくタイプです。 計画的に仕事をよく処理していくが、あくまでも過去の経験が根底となるので、 新たな挑戦や革新的な仕事をするのには、少し鈍いタイプに見えます。"
+                        resultCeleb = "ネコ顔の男性芸能人: 佐藤健、綾野剛、千葉雄大、hyde、大沢たかお"
+                        break;
+                    case "rabbit":
+                        resultTitle = "うさぎ顔男子"
+                        resultExplain = "思考力が優れどのような困難な状況でも冷静さを維持し理性的な判断が可能なタイプで、責任感が強く、周囲の人々をよく取りまとめる 配慮が多いタイプです。しかし、周囲の思いやりがあまりにも深いあまり、主観的な行動を間違っており、他の人の視線に揺れる傾向があります。また、過去の方式に偏って新たな挑戦ができない場合があり、あまりにも安定的に仕事を処理しようとして、進行が遅くなる場合があります。自分の好きな分野については没頭するが、そうでない分野については、挑戦もする前に放棄してしまう場合もあるので注意が必要です。"
+                        resultCeleb = "うさぎ顔の男性芸能人: 瀬戸康史、神木隆之介、千葉雄大、高橋一生、山崎賢人。"
+                        break;
+                    case "dinosaur":
+                        resultTitle = "カエル顔男子"
+                        resultExplain = "論理的に考えて判断するよりも、その瞬間の気持ちを優先的に判断するタイプで、周りの人とよく付き合う傾向なので、ムードメーカーとしての 役割をすることが多い。外向的な傾向として、人々との出会いも好きで、チームワークを重視し、周りの人と協力して目標を達成するのに楽しさを感じる傾向が強いです。 素直で明るい性格で周囲の人々にとって人気がありますが、他の人の仕事に関して必要以上に弄らして、相手が不快することもありえますので、注意が必要です。"
+                        resultCeleb = "カエル顔の男性芸能人: 三浦大知、古川雄輝、星野源、藤原竜也、向井理。"
+                        break;
+                    case "bear":
+                        resultTitle = "ワニ顔男子"
+                        resultExplain = "正義感が強く、本人が正当であると考えていることを正しいと正確に言うタイプです。相手をよく信頼していない傾向があり、人との関係においては、 味方が敵か二つに分けて判断する傾向が強いです。自分の主張が強く積極的に自信を持ってチームのリーダーの役割をしている場合があります。 論理的に考える利点があって、数学のように明確に答えを出すのが好きですが、時には安易に対応するか、意見の対立が生じた場合、多数決などで簡単に処理できず、 自己主張を打ち出す傾向があり得ます。"
+                        resultCeleb = "ワニ顔の男性芸能人: 星野源、松田龍平、長谷川博己、窪田正孝、松田翔太。"
+                        break;
+                    default:
+                        resultTitle = "不可知"
+                        resultExplain = ""
+                        resultCeleb = ""
+                }
+            } else {
+                switch (prediction[0].className) {
+                    case "dog":
+                        resultTitle = "犬顔女子"
+                        resultExplain = "将来の目標が高く、プライドが強く、理性と付き合うとき、相手をよく観察しながら発展していくタイプです。 このような理由から、相手の背景とスペックを重視する傾向があります。このような傾向は、常に良い相手に会うために努力している結果だと思われます。おおむね責任感が強く、勤勉で、異性を選ぶ場合は、結婚を前提に 会うケースが多いです。しかし、結婚相手を決定するに当たっては、なかなか決断ができないので、結婚適齢期にそばにいてくれる異性と結婚する傾向があります。"
+                        resultCeleb = "犬顔の女性芸能人: 奥仲麻琴、板野友美、前田敦子、大島優子、橋本環奈."
+                        break;
+                    case "cat":
+                        resultTitle = "ネコ顔女子"
+                        resultExplain = "内向きな性格に見えるが、お気に入りの異性が表れたら、時には積極的にダッシュするタイプ。恋愛には積極的な方だが、 恋愛と結婚を別に考える傾向があって、女性としてはクールである印象を与えます。男性からダッシュされてくることが多いので、気に入らなくても、応じる場合もあります。また、将来の設計、準備には徹底したタイプで、結婚相手は 経済的に余裕があるか安定した仕事を持つ男性を選ぶ場合があります。"
+                        resultCeleb = "ネコ顔の女性芸能人: 桐谷美玲、北川景子、柴咲コウ、広瀬すず、黒木メイサ。"
+                        break;
+                    case "rabbit":
+                        resultTitle = "うさぎ顔女子"
+                        resultExplain = "内向きであり、不注意が多いタイプで、恋愛においては好みの異性が現れてもよく表現できず、周囲をぐるぐる回るだけで終わることが多いです。時には、男性にダッシュを受けても、考えが多すぎて、相手に答えを与えずに躊躇する間に、相手が疲れて、他の異性に行ってしまう場合も多いです。自己表現が下手で、時には気に入らない異性とも付き合う場合もあり得ます。結婚に関しても、両親の意見や周囲の視線を気にして、無難な時期に無難な異性に会って結婚する傾向があります。"
+                        resultCeleb = "うさぎ顔の女性芸能人: 井上真央、山本美月、綾瀬はるか、小西真奈美、竹内結子。"
+                        break;
+                    case "deer":
+                        resultTitle = "たぬき顔女子"
+                        resultExplain = "明るく開放的な性格で、周囲の人々の話もよく聞いてくれる人気のタイプです。恋愛においても好奇心が多く情多く、すぐ恋に落ちる傾向があり、付き合う人がいるにもかかわらず、他の人に会う、浮気をする場合多いです。恋愛そのものが好きなタイプだが、意外に早い年齢で結婚して安定を探す場合もあります。"
+                        resultCeleb = "たぬき顔の女性芸能人: 永野芽郁、優木まおみ、長澤まさみ、有村架純、石原さとみ。"
+                        break;
+                    case "fox":
+                        resultTitle = "キツネ顔女子"
+                        resultExplain = "外向的な性格だが、恋愛においては理性が積極的にダッシュしてくると遠慮してしまう傾向があります。理想が高くて交際の経験が少なく、好みの異性が現れても表現できず、片思いした経験が多いです。結婚は恋愛の延長だと考える傾向があるので、相手選びに非常に慎重であり、好みの異性が現れても、悩みのあまり逃してしまう場合があります。 一般的に、最終的には周囲にいてくれた男性と結婚適齢期に結婚するパターンが多いです。"
+                        resultCeleb = "キツネ顔の女性芸能人: 水川あさみ、冨永愛、りょう、木村多江、菜々緒。"
+                        break;
+                    default:
+                        resultTitle = "不可知"
+                        resultExplain = ""
+                        resultCeleb = ""
+                }
+            }
+            var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
+            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            $('.result-message').html(title + explain + celeb);
+            var barWidth;
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    barWidth = "2%"
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "dog":
+                        labelTitle = "犬顔"
+                        break;
+                    case "cat":
+                        labelTitle = "ネコ顔"
+                        break;
+                    case "rabbit":
+                        labelTitle = "うさぎ顔"
+                        break;
+                    case "dinosaur":
+                        labelTitle = "カエル顔"
+                        break;
+                    case "bear":
+                        labelTitle = "ワニ顔"
+                        break;
+                    case "deer":
+                        labelTitle = "たぬき顔"
+                        break;
+                    case "fox":
+                        labelTitle = "キツネ顔"
+                        break;
+                    default:
+                        labelTitle = "不可知"
+                }
+                var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+        }
+    </script>
+    <script>
+        function iosApp() {
+            document.getElementById("coupang").style.display="none";
+            $("#coupang ins").hide();
+            document.getElementById("addThis").style.display="none";
+            document.getElementById("disqus_thread").style.display="none";
+            var kakao = document.getElementsByClassName("kakao_ad_area");
+            for (var i = 0; i < kakao.length; i++) {
+              if(kakao[i]) {
+                  kakao[i].style.display="none";
+              }
+            }
+            document.getElementById("yotube-top-link").style.display="none";
+            document.getElementById("yotube-mid-link").style.display="none";
+            document.getElementById("yotube-bottom-link").style.display="none";
+        }
+    </script>
+</body>
+<!-- 
+image input box
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+gender toggle
+Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+</html>
